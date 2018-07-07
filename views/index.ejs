@@ -1,21 +1,18 @@
 <% include partials/header %>
     <div class="temporary">
-      <div class="row">
-        <div class="col-md-6">
-          <img class="slider-left" src="/images/slider.jpg"/>
-        </div>
-        <div class="col-md-6">
-          <div class="slider-right">
-            <h3>Header</h3>
-            <p>This is where a paragraph will go and say some stuff about the company in the
-            future. We will say some pretty awesome stuff here though.</p>
+      <div class="row slider" id="slide1">
+          <div class="col-md-6">
+            <img class="slider-left" src="/images/slider.jpg"/>
           </div>
-        </div>
-
-
+          <div class="col-md-6 slider" id="slide1">
+            <div class="slider-right BoundInDown">
+              <h3>Header</h3>
+              <p>This is where a paragraph will go and say some stuff about the company in the
+              future. We will say some pretty awesome stuff here though.</p>
+            </div>
+          </div>
       </div>
 
-    </div>
 
     <div class="features">
       <h4>POWERFUL CUSTOM WEB APPLICATIONS</h4>
@@ -38,28 +35,64 @@
       </div>
     </div>
 
-    <div class="features-2">
+    <div class="features-2" id="features2">
       <div class="row">
-          <div class="col-md-6">
-            <img src="https://i.gyazo.com/175b515bb57ef9c15de53809e0aa4253.png" id="code"/>
-          </div>
-          <div class="col-md-6">
-            <div class="content-2">
-              <h3>Integrating Best Node Frameworks!</h3>
+          <div class="container column-section">
+            <div class="row">
+              <div class="col-md-4">
+                <h4><i class="fas fa-award"></i><strong>  Beautifully Designed</strong></h4>
+                <p>Our team is extremely talented at making your dream website a reality. We specialize on front end as well as back end development.</p>
+              </div>
+              <div class="col-md-4">
+                <h4><i class="fas fa-award"></i><strong>  Dynamic Functionality</strong></h4>
+                <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+              </div>
+              <div class="col-md-4">
+                <h4><i class="fas fa-award"></i><strong> One of A Kind</strong></h4>
+                <p>All of our web applications are coded completely by hand using the node.js. Our team specializes in creating custom made, functional web applications for any purpose.</p>
+              </div>
             </div>
-
           </div>
-      </div>
+        </div>
+
+        <div class="row">
+            <div class="container column-section">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4><i class="fas fa-award"></i><strong>Time Focused</strong></h4>
+                  <p>Once we determine the length of a project, we keep on schedule! Our team knows the importance of delivering our services in a timely manner and work diligently to deliver as stated.</p>
+                </div>
+                <div class="col-md-4">
+                  <h4><i class="fas fa-award"></i><strong>Beautifully Designed</strong></h4>
+                  <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+                </div>
+                <div class="col-md-4">
+                  <h4><i class="fas fa-award"></i><strong>Title</strong></h4>
+                  <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="container column-section">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4><i class="fas fa-award"></i><strong> Beautifully Designed</strong></h4>
+                    <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4><i class="fas fa-award"></i><strong> Functionality</strong></h4>
+                    <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4><i class="fas fa-award"></i><strong>Title</strong></h4>
+                    <p>Lorem ipsum is the way to go with the language and i love to type random crap</p>
+                  </div>
+                </div>
+              </div>
+            </div>
     </div>
 
 
-
-
-    <script src="../public/js/popper.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <% include partials/footer %>

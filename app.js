@@ -13,7 +13,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 var app = express();
 
 // Mongoose Database
-mongoose.connect('mongodb://localhost/portfolio');
+mongoose.connect('mongodb://localhost/envocode');
 
 app.set('view engine', 'ejs');
 
@@ -46,9 +46,27 @@ app.use(methodOverride('_method'));
 // ROUTES
 // =================
 
+// Index Route
 app.get('/', function(req, res){
   res.render('index');
 });
+
+// Blog Route
+app.get('/blog', function(req, res){
+  Blog.find({}, function(err, blog){
+    if(err){
+      console.log(err);
+      res.redirect('/');
+    } else {
+      res.render('blog', {blog: blog});
+    }
+  });
+});
+
+
+// Dashboard Routes
+
+
 
 
 
