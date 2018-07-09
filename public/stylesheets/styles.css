@@ -219,3 +219,17 @@ nav {
 .card {
   margin: 2rem auto;
 }
+
+
+/* Footer Styles */
+
+.footer-nav li {
+  list-style: none;
+  margin: 0 0;
+  padding: 0;
+}
+
+.footer-nav {
+  margin: 0 0;
+  padding: 0;
+}

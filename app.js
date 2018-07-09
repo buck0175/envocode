@@ -13,7 +13,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 var app = express();
 
 // Mongoose Database
-mongoose.connect('mongodb://localhost/envocode');
+// mongoose.connect('mongodb://localhost/envocode');
 
 app.set('view engine', 'ejs');
 
