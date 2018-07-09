@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body
+{
+    height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #79589F;
@@ -240,6 +250,9 @@ nav {
 
 .footer {
   margin: 2% 0;
+  margin-bottom: 5%;
+  background: url('/images/background.png');
+  background-size: cover;
 }
 
 .footer-nav li {
@@ -260,4 +273,6 @@ nav {
   background-color: #79589F;
   line-height: 3rem;
   color: white;
+  position: relative;
+  bottom: 0;
 }

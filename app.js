@@ -63,6 +63,18 @@ app.get('/blog', function(req, res){
   });
 });
 
+// Products ROUTE
+
+app.get('/products', function(req, res){
+  res.render('products');
+});
+
+// Showroom ROUTE
+
+app.get('/showroom', function(req, res){
+  res.render('showroom');
+})
+
 
 // Dashboard Routes
 
@@ -75,10 +87,10 @@ app.get('/blog', function(req, res){
 // Server Starter
 // =================
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//   console.log('server started!');
-// })
-
-app.listen(3333, () => {
-    console.log('http://localhost:${3333}');
+app.listen(process.env.PORT, process.env.IP, function(){
+  console.log('server started!');
 });
+
+// app.listen(3333, () => {
+//     console.log('http://localhost:${3333}');
+// });
