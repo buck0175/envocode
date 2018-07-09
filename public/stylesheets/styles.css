@@ -1,6 +1,17 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #79589F;
+  height: 100%;
+}
+
+a {
+  color: #79589F;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+  transition: .3s;
 }
 /* Navigation Section  */
 .navbar {
@@ -137,13 +148,17 @@ nav {
   color: white;
 }
 
+.portfolio {
+  margin: 0 auto;
+}
+
 .recent-portfolio {
   background: rgb(135,93,221);
   background: linear-gradient(90deg, rgba(135,93,221,1) 0%, rgba(114,94,158,1) 100%);
 }
 
 .recent-portfolio img{
-  height: 25rem;
+  height: 15rem;
   border-radius: 20px;
 }
 
@@ -167,7 +182,7 @@ nav {
 }
 .recent-portfolio img:hover {
   opacity: 0.5;
-  transition: 1s;
+  transition: .2s;
 }
 
 
@@ -223,6 +238,10 @@ nav {
 
 /* Footer Styles */
 
+.footer {
+  margin: 2% 0;
+}
+
 .footer-nav li {
   list-style: none;
   margin: 0 0;
@@ -232,4 +251,13 @@ nav {
 .footer-nav {
   margin: 0 0;
   padding: 0;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0;
+  height: 3rem;
+  background-color: #79589F;
+  line-height: 3rem;
+  color: white;
 }
