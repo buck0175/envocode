@@ -1,9 +1,29 @@
 body {
   font-family: 'Roboto', sans-serif;
+  color: #79589F;
 }
 /* Navigation Section  */
 .navbar {
   height: 80px;
+  z-index: 1;
+}
+nav {
+  animation: 1s fadein 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.heading {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
 }
 .btn-primary {
     color: #fff;
@@ -81,7 +101,8 @@ body {
 /* Four Column Section */
 
 #features2 {
-  margin: 5% 0;
+  background: url('/images/background.png');
+  background-size: cover;
 }
 
 .column-section {
@@ -89,10 +110,112 @@ body {
 }
 
 .column-section h4 {
-  font-family:sans-serif;
-  font-size: 16px;
+  margin: 5% 0;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .column-section p {
   font-size: 15px;
+}
+
+.icon {
+  font-size: 50px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin: 4% 0;
+}
+
+
+/* PORTOLIO SECTION */
+
+#portfolioH2 {
+  margin: 2% auto;
+  color: white;
+}
+
+.recent-portfolio {
+  background: rgb(135,93,221);
+  background: linear-gradient(90deg, rgba(135,93,221,1) 0%, rgba(114,94,158,1) 100%);
+}
+
+.recent-portfolio img{
+  height: 25rem;
+  border-radius: 20px;
+}
+
+.port-image {
+  display: block;
+  margin: 0 auto;
+
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.recent-portfolio:hover {
+  background-color: blue;
+
+}
+.recent-portfolio img:hover {
+  opacity: 0.5;
+  transition: 1s;
+}
+
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+  margin: 0 auto;
+  margin-bottom: 2%;
+  background: url('/images/background.png');
+  background-size: cover;
+
+}
+
+.testimonials h2{
+  margin: 3% auto;
+}
+
+#left {
+  margin: 110% 0;
+}
+
+#left:hover {
+  color: #5a3c7d;
+  transition: 1s;
+}
+
+#right {
+  margin: 110% 0;
+}
+
+#right:hover {
+  color: #5a3c7d;
+  transition: 1s;
+}
+
+.dots {
+  margin: 1% auto;
+  display: block;
+  text-align: center;
+}
+
+
+/* Social Section */
+
+.social {
+  background-color: #fbfafd;
+}
+
+.card {
+  margin: 2rem auto;
 }
