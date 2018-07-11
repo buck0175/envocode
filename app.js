@@ -10,6 +10,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 
+var Blog = require('./models/blog.js');
+
+
+
 var app = express();
 
 // Mongoose Database
@@ -51,17 +55,14 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
+// Showcase ROUTE
+
+app.get('/showcase', function(req, res){
+  res.render('showcase/showcase');
+})
+
 // Blog Route
-app.get('/blog', function(req, res){
-  Blog.find({}, function(err, blog){
-    if(err){
-      console.log(err);
-      res.redirect('/');
-    } else {
-      res.render('blog', {blog: blog});
-    }
-  });
-});
+
 
 // Products ROUTE
 
@@ -73,7 +74,62 @@ app.get('/products', function(req, res){
 
 app.get('/showroom', function(req, res){
   res.render('showroom');
-})
+});
+
+// Prices ROUTES
+app.get('/prices', function(req, res){
+  res.render('prices');
+});
+
+// =====================
+// BLOG RESTFUL ROUTES
+// =====================
+
+// Retreives The Main Blog Route
+app.get('/blog', function(req, res){
+  Blog.find({}, function(err, blog){
+    if(err){
+      console.log(err);
+      res.redirect('/');
+    } else {
+      res.render('blog/blog', {blog: blog});
+    }
+  });
+});
+
+// Retreives The Blog Post Form
+app.get('/blog/new', function(req, res){
+  res.render('blog/new');
+});
+
+// Posts New Entries From The Form
+
+app.post('/blog', function(req, res){
+  Blog.create(req.body.blog, function(err, blog){
+    if(err){
+      console.log(err);
+      res.redirect('/blog/new');
+    } else {
+      res.redirect('/blog/' + blog._id);
+    }
+  });
+});
+
+// =====================
+// PRICING ROUTES
+// =====================
+
+app.get('/pricing', function(req, res){
+  res.render('prices');
+});
+
+// =====================
+// SUPPORT ROUTES
+// =====================
+
+app.get('/support', function(req, res){
+  res.render('support');
+});
 
 
 // Dashboard Routes

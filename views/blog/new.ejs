@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <form action="/blog" method="POST">
+    <h2>New Article</h2>
+
+    <div class="form-group">
+        <label><h5>New Collection</h5></label>
+        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
+    </div>
+
+    <div class="form-group">
+        <label><h5>New Collection</h5></label>
+        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
+    </div>
+
+    <div class="form-group">
+        <label><h5>New Collection</h5></label>
+        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
+    </div>
+    <input type="text" class="form-control" name="blog[title]" placeholder="Article Title">
+    <input type="text" class="form-control" name="blog[author]" placeholder="Author">
+    <button class="btn btn-primary">Submit</button>
+
+  </form>
+</div>
+
+<% include ../partials/footer %>
