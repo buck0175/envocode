@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%=blog.title%></li>
+    </ol>
+  </nav>
+</div>
+
+
+<div class="blog-show">
+  <div class="container">
+    <div class="card">
+      <img class="card-img-top" src="<%=blog.image%>" alt="Card image cap">
+      <div class="card-body">
+        <h2><%=blog.title%></h2>
+        <h6><%=blog.date.toDateString()%></h6>
+        <p class="card-text"><%-blog.body%></p>
+
+        <br>
+
+        <form action="/blog/<%=blog._id%>?_method=DELETE" method="POST">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

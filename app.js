@@ -10,14 +10,14 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 
-var Blog = require('./models/blog.js');
+GLOBAL.Blog = require('./models/blog.js');
 
 
 
 var app = express();
 
 // Mongoose Database
-// mongoose.connect('mongodb://localhost/envocode');
+mongoose.connect('mongodb://localhost/envocode');
 
 app.set('view engine', 'ejs');
 
@@ -28,6 +28,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
+
+
+// Local Variables
+
 
 // PASSPORT CONFIGURATION
 // app.use(require('express-session')({
@@ -103,7 +107,6 @@ app.get('/blog/new', function(req, res){
 });
 
 // Posts New Entries From The Form
-
 app.post('/blog', function(req, res){
   Blog.create(req.body.blog, function(err, blog){
     if(err){
@@ -114,6 +117,36 @@ app.post('/blog', function(req, res){
     }
   });
 });
+
+// Displays the show page for individual blog posts
+app.get('/blog/:id', function(req, res){
+  Blog.findById(req.params.id, function(err, blog){
+    if(err){
+      console.log(err);
+      res.redirect('/blog');
+    } else {
+      res.render('blog/show', {blog: blog});
+    }
+  });
+});
+
+// Shows Edit form
+
+// Puts edit form
+
+
+// Removes blog posts
+app.delete("/blog/:id", function(req, res){
+  Blog.findByIdAndDelete(req.params.id, function(err, blog){
+    if(err){
+      console.log(err);
+      res.redirect('/blog');
+    } else {
+      res.redirect('/blog');
+    }
+  });
+});
+
 
 // =====================
 // PRICING ROUTES
@@ -143,10 +176,10 @@ app.get('/support', function(req, res){
 // Server Starter
 // =================
 
-app.listen(process.env.PORT, process.env.IP, function(){
-  console.log('server started!');
-});
-
-// app.listen(3333, () => {
-//     console.log('http://localhost:${3333}');
+// app.listen(process.env.PORT, process.env.IP, function(){
+//   console.log('server started!');
 // });
+
+app.listen(3333, () => {
+    console.log('http://localhost:${3333}');
+});

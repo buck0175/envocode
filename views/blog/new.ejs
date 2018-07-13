@@ -1,28 +1,33 @@
 <% include ../partials/header %>
 
-<div class="container">
-  <form action="/blog" method="POST">
-    <h2>New Article</h2>
+<div class="blog">
+  <div class="container blog-form">
+    <form action="/blog" method="POST">
+      <h2>New Article</h2>
 
-    <div class="form-group">
-        <label><h5>New Collection</h5></label>
-        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
-    </div>
+      <div class="form-group">
+          <label><h5>Blog Title</h5></label>
+          <input type="text" class="form-control" name="blog[title]" placeholder="Blog title">
+      </div>
 
-    <div class="form-group">
-        <label><h5>New Collection</h5></label>
-        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
-    </div>
+      <div class="form-group">
+          <label><h5>Image</h5></label>
+          <input type="text" class="form-control" name="blog[image]" placeholder="Image">
+      </div>
 
-    <div class="form-group">
-        <label><h5>New Collection</h5></label>
-        <input type="text" class="form-control-file" name="collection[name]" placeholder="Collection Name">
-    </div>
-    <input type="text" class="form-control" name="blog[title]" placeholder="Article Title">
-    <input type="text" class="form-control" name="blog[author]" placeholder="Author">
-    <button class="btn btn-primary">Submit</button>
+      <div class="form-group">
+          <label><h5>Author</h5></label>
+          <input type="text" class="form-control" name="blog[author]" placeholder="Author">
+      </div>
 
-  </form>
+      <div class="form-group">
+          <label><h5>New Collection</h5></label>
+          <textarea class="form-control" placeholder="Write your blog post here" name="blog[body]"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+
+    </form>
+  </div>
 </div>
 
 <% include ../partials/footer %>
