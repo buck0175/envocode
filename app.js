@@ -236,10 +236,10 @@ function isLoggedIn(req, res, next){
 // Server Starter
 // =================
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//   console.log('server started!');
-// });
-
-app.listen(3333, () => {
-    console.log('http://localhost:${3333}');
+app.listen(process.env.PORT, process.env.IP, function(){
+  console.log('server started!');
 });
+
+// app.listen(3333, () => {
+//     console.log('http://localhost:${3333}');
+// });
