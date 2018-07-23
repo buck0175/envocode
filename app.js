@@ -10,7 +10,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 
-GLOBAL.Blog = require('./models/blog.js');
+var Blog = require('./models/blog.js');
+var User = require('./models/user.js');
 
 
 
@@ -19,7 +20,7 @@ var app = express();
 // Mongoose Database
 mongoose.connect('mongodb://localhost/envocode');
 
-app.set('view engine', 'ejs');
+
 
 // Setting the view engine to EJS
 app.set('view engine', 'ejs');
@@ -34,21 +35,21 @@ app.use(methodOverride('_method'));
 
 
 // PASSPORT CONFIGURATION
-// app.use(require('express-session')({
-//   secret: "Salwa is so beautiful",
-//   resave: false,
-//   saveUninitialized: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
-//
-// app.use(function(req, res, next){
-//     res.locals.currentUser = req.user;
-//     next();
-// });
+app.use(require('express-session')({
+  secret: "Salwa is so beautiful",
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // =================
 // ROUTES
@@ -56,7 +57,15 @@ app.use(methodOverride('_method'));
 
 // Index Route
 app.get('/', function(req, res){
-  res.render('index');
+  Blog.find({}, function(err, blog){
+    if(err){
+      console.log(err);
+    } else {
+      console.log(blog);
+      res.render('index', {blog: blog});
+    }
+  })
+
 });
 
 // Showcase ROUTE
@@ -147,6 +156,46 @@ app.delete("/blog/:id", function(req, res){
   });
 });
 
+// =====================
+// PASSPORT ROUTES
+// =====================
+
+
+// Register Form
+app.get('/register', function(req, res){
+  res.render('register');
+});
+
+// Register Post Request
+app.post('/register', function(req, res){
+  var newUser = new User({username: req.body.username});
+  User.register(newUser, req.body.password, function(err, user){
+    if(err){
+      console.log(err);
+      return res.render('register');
+    }
+    passport.authenticate("local")(req, res, function(){
+      res.redirect('/');
+    });
+  });
+});
+
+app.get('/login', function(req, res){
+  res.render('login');
+});
+
+app.post("/login", passport.authenticate("local",
+  {
+    successRedirect: "/",
+    failureRedirect: "/login"
+  }), function(req, res){
+
+});
+
+app.get('/logout', isLoggedIn, function(req, res){
+  req.logout();
+  res.redirect('/photos');
+});
 
 // =====================
 // PRICING ROUTES
@@ -165,11 +214,22 @@ app.get('/support', function(req, res){
 });
 
 
+
+
 // Dashboard Routes
 
 
 
 
+
+// Logged In function
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/login');
+}
 
 
 // =================

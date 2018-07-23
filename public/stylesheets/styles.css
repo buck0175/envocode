@@ -23,6 +23,7 @@ a:hover {
   color: black;
   transition: .3s;
 }
+
 /* Navigation Section  */
 .navbar {
   z-index: 1;
@@ -37,6 +38,10 @@ a:hover {
   margin: 0 auto;
   text-align: center;
   margin-top: 2rem;
+}
+
+.white {
+  color: white;
 }
 .btn-primary {
     color: #fff;
@@ -165,28 +170,10 @@ a:hover {
   margin: 0 auto;
 }
 
-.recent-portfolio {
+.video {
   background: rgb(135,93,221);
   background: linear-gradient(90deg, rgba(135,93,221,1) 0%, rgba(114,94,158,1) 100%);
-}
-
-.recent-portfolio img{
-  height: 15rem;
-  border-radius: 20px;
-}
-
-.port-image {
-  display: block;
-  margin: 0 auto;
-
-}
-
-.title {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  margin-top: 2%;
-  margin-bottom: 6%;
+  padding: 2% 0;
 }
 
 .recent-portfolio:hover {
@@ -197,6 +184,12 @@ a:hover {
   opacity: 0.5;
   transition: .2s;
 }
+#showcaseTitle {
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+
 
 
 /* TESTIMONIALS SECTION */
@@ -252,10 +245,9 @@ a:hover {
 /* Footer Styles */
 
 .footer {
-  margin: 2% 0;
-  margin-bottom: 5%;
-  background: url('/images/background.png');
+  background-color: #f7f7f7;
   background-size: cover;
+  padding-top: 2%;
 }
 
 .footer-nav li {
@@ -270,14 +262,12 @@ a:hover {
 }
 
 .copyright {
-  margin: 0;
   padding: 0;
   height: 3rem;
   background-color: #79589F;
   line-height: 3rem;
   color: white;
-  position: relative;
-  bottom: 0;
+  margin-top: 2%;
 }
 
 
@@ -305,6 +295,14 @@ a:hover {
   margin-bottom: 1%;
 }
 
+.header1-image {
+  background: url('/images/header1.png');
+  background-size: cover;
+  height: 30%;
+  color: white;
+  margin-bottom: 1%;
+}
+
 .header-container {
   padding: 5rem 0;
 }
@@ -315,12 +313,33 @@ a:hover {
 
 .prices {
   background-color: #fbfafd;
-  text-align: center;
+  padding: 3% 0;
 }
 
-.prices li {
-  list-style: none;
+.prices i {
+  font-size: 50px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
+
+.prices h2 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+#quote {
+  margin: 0 20%;
+}
+
+.quote .button {
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 /* ============================ */
 /* Blog Specific Styles */
@@ -336,4 +355,22 @@ a:hover {
 
 .blog-form {
   padding: 3% 0;
+}
+
+.card-img-top img {
+    height: 60%;
+}
+
+/* .thumbnail {
+    padding: 0;
+} */
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+.our-company {
+  text-align: center;
+}
+.purple-section {
+  color: white;
 }
