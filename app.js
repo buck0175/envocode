@@ -20,7 +20,7 @@ var app = express();
 // Mongoose Database
 // mongoose.connect('mongodb://localhost/envocode');
 
-mongoose.connect('mongodb://envocode:@ds141960.mlab.com:41960/envocode');
+// mongoose.connect('mongodb://envocode:@ds141960.mlab.com:41960/envocode');
 
 
 
@@ -214,7 +214,7 @@ app.get('/pricing', function(req, res){
 // =====================
 
 app.get('/support', function(req, res){
-  res.render('support');
+  // res.render('support');
 });
 
 
