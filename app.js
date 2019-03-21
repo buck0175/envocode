@@ -44,11 +44,11 @@ app.get('/portfolio', function(req, res){
 
 
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//   console.log('server started!');
-// });
-
-
-app.listen(3333, () => {
-  console.log('http://www.localhost:${3333}');
+app.listen(process.env.PORT, process.env.IP, function(){
+  console.log('server started!');
 });
+
+
+// app.listen(3333, () => {
+//   console.log('http://www.localhost:${3333}');
+// });
