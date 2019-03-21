@@ -122,7 +122,7 @@
 }
 
 .information-columns {
-  margin-bottom: 70px;
+  margin: 100px 0;
 }
 
 .call-to-action {
@@ -887,19 +887,26 @@ footer {
 
   .individual-section:nth-child(5) {
     grid-column: 1/4;
+    margin-bottom: 0;
+
   }
   .individual-section:nth-child(6) {
     grid-column: 4/7;
+    margin-bottom: 0;
+
   }
   .individual-section:nth-child(7){
     grid-column: 7/10;
+    margin-bottom: 0;
+
   }
 
   .individual-section:nth-child(8){
     grid-column: 10/13;
+    margin-bottom: 0;
   }
   .individual-section {
-    margin: 0 10px;
+    margin: 20px 10px 50px 10px;
   }
 
   #contact-form {
