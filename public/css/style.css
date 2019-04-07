@@ -353,22 +353,14 @@ footer {
 
 /* About Us Page Styles -- Mobile */
 
-.aboutus-banner {
-  background-image: url(../img/background.jpg);
-  background-size: cover;
-  background-position: center;
-  line-height: 100px;
-  height: 100px;
-  background-attachment: fixed;
-}
+.ourStory {
+  margin-top: 100px;
 
-.aboutus-banner h1 {
-  line-height: 100px;
-  text-align: center;
 }
 
 #ourStory {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
   color: #13A841;
   font-size: 2em;
   text-transform: uppercase;
