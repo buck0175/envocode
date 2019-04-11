@@ -5,6 +5,35 @@
   max-width: 1300px;
 }
 
+@keyframes zoom {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-slider {
+  padding: 15px 80px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: #1DB954;
+  color: white;
+  font-size: 17px;
+  transition: 0.4s;
+  animation-name: zoom;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  transform: scale(0);
+}
+
+.btn-slider:hover {
+  transition: 0.4s;
+  background-color: #118C37;
+  transform: scale(1.05);
+  transition-timing-function: ease-in-out;
+}
+
 .btn-envo {
   border: 1px solid white;
   padding-left: 10px;
@@ -145,9 +174,6 @@
   padding-bottom: 20px;
   text-shadow: 2px 0 10px black;
 }
-
-
-
 
 .timeline {
   position: relative;
